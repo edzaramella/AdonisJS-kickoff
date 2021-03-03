@@ -1,0 +1,14 @@
+@layout('layouts/master')
+@section('content')
+@loggedIn
+
+<!-- LoggedIn -->
+@include('home/partials/logged_in')
+<!--/loggedin -->
+@else
+
+<!-- LoggedOut-->
+@include('home/partials/logged_out')
+<!--/loggedout -->
+@endloggedIn
+@endsection

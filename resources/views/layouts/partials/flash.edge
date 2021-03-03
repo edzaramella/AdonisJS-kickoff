@@ -1,0 +1,69 @@
+@if( old('flash_info') )
+<!-- message: success -->
+<div class="alert alert-info m-0">
+    {{ old('flash_info') }}
+    <button type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+    >
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+@if( old('flash_success') )
+<!-- message: success -->
+<div class="alert alert-success m-0">
+    {{ old('flash_success') }}
+    <button type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+    >
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+@if( old('flash_warning') )
+<!-- message: warning -->
+<div class="alert alert-warning m-0">
+    {{ old('flash_warning') }}
+    <button type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+    >
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+@if( old('flash_error') )
+<!-- message: error -->
+<div class="alert alert-danger m-0">
+    {{ old('flash_error') }}
+    <button type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+    >
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+<!--@if( old('errors') )-->
+<!--&lt;!&ndash;message: errors&ndash;&gt;-->
+<!--<div class="alert alert-danger m-0">-->
+<!--    <button type="button"-->
+<!--            class="close"-->
+<!--            data-dismiss="alert"-->
+<!--            aria-label="Close"-->
+<!--    >-->
+<!--        <span aria-hidden="true">&times;</span>-->
+<!--    </button>-->
+<!--    @each( error in old('errors') )-->
+<!--    <ul>-->
+<!--        <li>{{ error.message }}</li>-->
+<!--    </ul>-->
+<!--    @endeach-->
+<!--</div>-->
+<!--@endif-->

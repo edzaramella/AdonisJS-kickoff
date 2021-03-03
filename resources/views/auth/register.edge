@@ -1,0 +1,119 @@
+@layout('layouts/master')
+@section('content')
+<section class="bg-primary py-5 text-center"style="height:75vh">
+    <section class="container">
+        <div class="justify-content-center row">
+            <div class="col-lg-7">
+                <div class="card rounded-lg shadow">
+                    <div class="card-header h4 text-primary">Inscrever-se</div>
+                    <div class="card-body">
+                        <!-- Form -->
+                        <form action="{{ route('postRegister') }}"
+                              method="post"
+                        >
+                            {{ csrfField() }}
+                            <div class="form-row text-left">
+                                <div class="form-group col-md-6">
+                                    <label for="inputFirstName"
+                                           class="small"
+                                    >Nome*
+                                    </label>
+                                    <input type="text"
+                                           class="form-control {{ elIf('is-invalid', getErrorFor('first_name'), hasErrorFor('first_name')) }}"
+                                           id="inputFirstName"
+                                           name="first_name"
+                                           value="{{ old('first_name', '') }}"
+                                           placeholder="informe o seu nome"
+                                    />
+                                    <div class="invalid-feedback">{{ getErrorFor('first_name') }}</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputLastName"
+                                           class="small"
+                                    >Sobrenome*
+                                    </label>
+                                    <input type="text"
+                                           class="form-control {{ elIf('is-invalid', getErrorFor('last_name'), hasErrorFor('last_name')) }}"
+                                           id="inputLastName"
+                                           name="last_name"
+                                           value="{{ old('last_name', '') }}"
+                                           placeholder="informe o seu sobrenome"
+                                    />
+                                    <div class="invalid-feedback">{{ getErrorFor('last_name') }}</div>
+                                </div>
+                            </div>
+                            <div class="form-row text-left">
+                                <div class="form-group col-md-12 text-left">
+                                    <label for="inputEmail"
+                                           class="small"
+                                    >Email
+                                    </label>
+                                    <input type="email"
+                                           class="form-control {{ elIf('is-invalid', getErrorFor('email'), hasErrorFor('email')) }}"
+                                           id="inputEmail"
+                                           name="email"
+                                           value="{{ old('email', '') }}"
+                                           placeholder="informe o seu email"
+                                    />
+                                    <div class="invalid-feedback">{{ getErrorFor('email') }}</div>
+                                </div>
+                            </div>
+                            <div class="form-row text-left">
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword"
+                                           class="small"
+                                    >Senha*
+                                    </label>
+                                    <input type="password"
+                                           class="form-control {{ elIf('is-invalid', getErrorFor('password'), hasErrorFor('password')) }}"
+                                           id="inputPassword"
+                                           name="password"
+                                           value="{{ old('password', '') }}"
+                                           placeholder="informe a sua senha"
+                                    />
+                                    <div class="invalid-feedback">{{ getErrorFor('password') }}</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPasswordConfirmation"
+                                           class="small"
+                                    >Confirmação da senha*
+                                    </label>
+                                    <input type="password"
+                                           class="form-control {{ elIf('is-invalid', getErrorFor('password_confirmation'), hasErrorFor('password_confirmation')) }}"
+                                           id="inputPasswordConfirmation"
+                                           name="password_confirmation"
+                                           value="{{ old('password_confirmation', '') }}"
+                                           placeholder="digite novamente sua senha"
+                                    />
+                                    <div class="invalid-feedback">{{ getErrorFor('password_confirmation') }}</div>
+                                </div>
+                            </div>
+                            <div class=" mt-4 row">
+                                <div class="col-md-6 text-left">
+                                    <a href="{{ route('resendEmail') }}"
+                                       class="btn btn-light btn-block btn-outline-primary"
+                                    >Reenviar email de confirmação
+                                    </a>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <button type="submit"
+                                            class="btn btn-block btn-primary"
+                                    >Criar uma conta
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <!--/Form -->
+                    </div>
+                    <div class="card-footer text-muted">
+                        <a href="{{ route('login') }}"
+                           class="small"
+                        >Retornar para tela de login
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+@endsection
